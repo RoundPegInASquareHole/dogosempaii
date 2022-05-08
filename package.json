@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "git-install": "^0.5.2"
+    "git-install": "^0.5.2",
+    "nedb": "^1.8.0"
   }
 }
