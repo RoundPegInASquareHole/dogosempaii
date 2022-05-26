@@ -4,13 +4,28 @@ var path = require('path');
 //const datafile = path.join(__dirname, 'dogomoods.db');
 //const db = new Datastore({ filename: datafile, autoload: true });
 
-var API_PATH = "/api";
+var API_PATH = "/api/v1";
 var request = require("request");
 var express = require("express");
 
-var api = require("gettyimages-api.js");
-var creds = { apiKey: "your_api_key", apiSecret: "your_api_secret", username: "your_username", password: "your_password" };
-var client = new api(creds);
+var imgPath = "C:\Users\alex_\Desktop\dogosempaii\dogosempaii\src\Frontend\imgs"
+var dbContent =
+{
+    "mood":
+        [
+            {
+                "id": "sad",
+                "items":
+                    [
+                        imgPath + "\dogo-image-prueba-1.jpg",
+                        imgPath + "\dogo-image-prueba-2.jpg",
+                        imgPath + "\dogo-image-prueba-3.jpg",
+                        imgPath + "\dogo-image-prueba-4.jpg",
+                        imgPath + "\dogo-image-prueba-5.jpg"
+                    ]
+            }
+        ]
+}
 
 module.exports.register = (app) => {
 
@@ -18,20 +33,15 @@ module.exports.register = (app) => {
         var query = req.query;
         var mood = query.mood; //user's moods
 
-        client.searchimagescreative().withPage(1).withPageSize(1).withPhrase(mood)
-            .execute().then(response => {
+        //
 
-                console.log(JSON.stringify(response.images[0]));
-                client.downloadsimages().withId(response.images[0].id)
-                    .execute().then(response => {
-                        console.log(response.uri);
-                    }, err => {
-                        throw err;
-                    });
+    });
 
-            }, err => {
-                throw err;
-            });
+    app.get(API_PATH + "/loadInitialData", (req, res) => {
+        var query = req.query;
+        var mood = query.mood; //user's moods
+
+        //
 
     });
 
