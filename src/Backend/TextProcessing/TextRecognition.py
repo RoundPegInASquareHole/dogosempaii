@@ -55,8 +55,6 @@ for cnt in contours:
 	
 	# Apply OCR on the cropped image
 	text = pytesseract.image_to_string(cropped)
-
-	# Clear white spaces...
 	
 	# Appending the text into file
 	file.write(text)
