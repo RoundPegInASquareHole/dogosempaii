@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "gettyimages-api": "^5.1.0",
+    "git-install": "^0.5.2",
+    "nedb": "^1.8.0",
+    "request": "^2.88.2"
+  },
+  "name": "dogosempaii",
+  "description": "just for fun lol",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoundPegInASquareHole/dogosempaii.git"
+  },
+  "author": "Alejandro Pariente Migoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoundPegInASquareHole/dogosempaii/issues"
+  },
+  "homepage": "https://github.com/RoundPegInASquareHole/dogosempaii#readme"
+}
